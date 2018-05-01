@@ -1,5 +1,12 @@
 #!/bin/sh
 
+
+git add *
+git commit -m 'Update to version $1'
+git push origin master
+
+git pull https://github.com/fjblau/pod.git
+
 archiveFile="pod@$1.bna"
 
 composer archive create -t dir -n .
