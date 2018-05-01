@@ -1,6 +1,6 @@
 #!/bin/sh
 
-jsonFile=$2
+jsonFile=package.json
 
 node > out_${jsonFile} <<EOF
 var data = require('./${jsonFile}')
