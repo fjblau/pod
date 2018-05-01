@@ -1,8 +1,7 @@
 #!/bin/sh
 
-
 git add *
-git commit -m 'Update to version $1'
+git commit -m 'update version'
 git push origin master
 
 git pull https://github.com/fjblau/pod.git
