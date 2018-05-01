@@ -1,6 +1,6 @@
 {
   "name": "pod",
-  "version": "xxx",
+  "version": "$jqCmd",
   "description": "proof of delivery",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/pod.bna",
