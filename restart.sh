@@ -4,13 +4,12 @@ jsonFile=package.json
 
 node > out_${jsonFile} <<EOF
 var data = require('./${jsonFile}')
-
 data.version = "$1";
 console.log(JSON.stringify(data));
 
 EOF
 
-mv package.json package.json.old
+rm package.json
 mv out_package.json package.json
 
 git add *
