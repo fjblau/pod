@@ -78,6 +78,9 @@ asset GR identified by GRID {
   o DateTime GRDateTime
 }
 
+asset Message identified by MessageId {
+  o String MessageId
+}
 
 /**
  * A concept for a simple street address
