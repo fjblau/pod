@@ -19,6 +19,8 @@ git pull https://github.com/fjblau/pod.git
 
 archiveFile="pod@$1.bna"
 
+./~/fabric-dev-servers/startFabric.sh
+
 composer archive create -t dir -n .
 composer network install -c peerAdmin@hlfv1 -a $archiveFile
 composer network start --card PeerAdmin@hlfv1 --networkAdmin admin  --networkName pod --networkVersion "$1" --networkAdminEnrollSecret adminpw  --file networkadmin.card
