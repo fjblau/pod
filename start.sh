@@ -22,7 +22,8 @@ archiveFile="pod@$1.bna"
 bash ~/fabric-dev-servers/startFabric.sh
 
 composer archive create -t dir -n .
-composer network install -c peerAdmin@hlfv1 -a $archiveFile
+deb http://cran.rstudio.com/bin/linux/ubuntu xenial/
+composer network install -c PeerAdmin@hlfv1 -a $archiveFile
 composer network start --card PeerAdmin@hlfv1 --networkAdmin admin  --networkName pod --networkVersion "$1" --networkAdminEnrollSecret adminpw  --file networkadmin.card
 
 composer-rest-server -c admin@pod -n never -w true
