@@ -13,7 +13,7 @@ mv out_package.json package.json
 
 git remote set-url origin git@github.com:fjblau/pod.git
 git add *
-git commit -m 'update version'
+git commit -m "update version $1"
 git push origin master
 
 git pull https://github.com/fjblau/pod.git
