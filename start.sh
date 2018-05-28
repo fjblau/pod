@@ -11,6 +11,7 @@ EOF
 rm package.json
 mv out_package.json package.json
 
+git remote set-url origin git@github.com:fjblau/pod.git
 git add *
 git commit -m 'update version'
 git push origin master
