@@ -9,7 +9,7 @@ EOF
 rm package.json
 mv out_package.json package.json
 
-archiveFile="driver-network@$1.bna"
+archiveFile="pod@$1.bna"
 
 bash ~/fabric-dev-servers/startFabric.sh
 
