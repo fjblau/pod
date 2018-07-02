@@ -1,4 +1,4 @@
-onFile=package.json
+jsonFile=package.json
 
 node > out_${jsonFile} <<EOF
 var data = require('./${jsonFile}')
