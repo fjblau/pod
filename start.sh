@@ -1,5 +1,3 @@
-#!/bin/sh
-
 jsonFile=package.json
 
 node > out_${jsonFile} <<EOF
@@ -11,19 +9,25 @@ EOF
 rm package.json
 mv out_package.json package.json
 
-git remote set-url origin git@github.com:fjblau/pod.git
-git add *
-git commit -m "update version $1"
-git push origin master
-
-git pull https://github.com/fjblau/pod.git
-
 archiveFile="pod@$1.bna"
 
 bash ~/fabric-dev-servers/startFabric.sh
+
+rm *.bna
+git rm *.bna
+git commit -m "Commit version $1"
+git push -u origin master
 
 composer archive create -t dir -n .
 composer network install -c PeerAdmin@hlfv1 -a $archiveFile
 composer network start --card PeerAdmin@hlfv1 --networkAdmin admin  --networkName pod --networkVersion "$1" --networkAdminEnrollSecret adminpw  --file networkadmin.card
 
-composer-rest-server -c admin@pod -n never -w true
+git rm *.bna
+git commit -m "Commit version $1"
+git push -u origin master
+
+git add *
+git commit -m "Commit version $1"
+git push -u origin master
+
+#composer-rest-server -c admin@pod -n never -w true
